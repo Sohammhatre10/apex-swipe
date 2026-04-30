@@ -1,0 +1,202 @@
+.profileContainer {
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--bg-layer-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  position: relative;
+}
+
+.avatar::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+  z-index: -1;
+  opacity: 0.8;
+  filter: blur(8px);
+}
+
+.avatar::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+  z-index: -1;
+}
+
+.userInfo h1 {
+  font-size: 2rem;
+  margin-bottom: 4px;
+}
+
+.userInfo p {
+  color: var(--text-secondary);
+}
+
+.portfolioSummary {
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(56, 189, 248, 0.05));
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.portfolioValue {
+  font-family: var(--font-mono);
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.portfolioChange {
+  color: var(--accent-green);
+  font-family: var(--font-mono);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1rem;
+}
+
+.insightsCard {
+  padding: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  border-left: 4px solid var(--accent-blue);
+}
+
+.insightsIcon {
+  color: var(--accent-blue);
+  background: rgba(56, 189, 248, 0.1);
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.insightsContent h3 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.insightsContent p {
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.miniCard {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.miniCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.miniCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.miniCardTicker {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.miniCardName {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.miniCardPrice {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  text-align: right;
+}
+
+.miniCardChange {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  text-align: right;
+  color: var(--accent-green);
+}
+
+.riskSliderContainer {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.riskLabels {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(to right, var(--accent-green), var(--accent-purple), var(--accent-red));
+  outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  border: 2px solid var(--accent-purple);
+}

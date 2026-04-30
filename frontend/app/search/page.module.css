@@ -1,0 +1,135 @@
+.searchContainer {
+  padding: 40px 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.searchHeader {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.searchHeader h1 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.searchHeader p {
+  color: var(--text-secondary);
+}
+
+.searchInputWrapper {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+}
+
+.searchInput {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  padding: 20px 24px 20px 64px;
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.searchInput:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(56, 189, 248, 0.5);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15), 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.resultsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.resultCard {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.resultCard:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateX(8px);
+}
+
+.resultLogo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: #000;
+}
+
+.resultInfo {
+  flex: 1;
+}
+
+.resultTicker {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.resultName {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.resultGraph {
+  width: 120px;
+  height: 40px;
+}
+
+.resultPrice {
+  text-align: right;
+  min-width: 100px;
+}
+
+.price {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.change {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.pos { color: var(--accent-green); }
+.neg { color: var(--accent-red); }
+
+.emptyState {
+  text-align: center;
+  color: var(--text-secondary);
+  padding: 40px 0;
+}

@@ -1,0 +1,64 @@
+# Node / Frontend (Next.js & React)
+node_modules/
+.next/
+out/
+build/
+dist/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+pnpm-debug.log
+.pnp.*
+
+# Python / Backend (FastAPI)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.venv/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+jwt_secret*
+
+# IDE / OS Specific
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Logs & Temporary Files
+*.log
+tmp/
+temp/
+coverage/
+.nyc_output/
