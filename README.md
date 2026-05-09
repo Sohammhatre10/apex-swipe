@@ -31,3 +31,19 @@
 - **Auth Pipeline:** Frontend modal securely parses `POST /auth/login`, stores the JWT in `localStorage`, and injects `Authorization: Bearer <token>` into all subsequent data requests.
 - **Feed Pagination Algorithm:** The swipe deck optimistically manages state. As the deck runs low (e.g., `< 5 cards left`), it silently signals the `/stocks/feed` endpoint to recursively inject the next batch into the stack, guaranteeing a frictionless infinite swipe loop.
 - **Sanitization Middleware:** The backend rigorously parses MongoDB documents for float anomalies (`NaN`, `Infinity`—common in incomplete market data) and safely normalizes them to `None` for pristine JSON compliance, preventing browser unhandled runtime crashes.
+
+## 📊 Data Fetching
+
+To populate the stock database, you can run the ingestion scripts located in the backend. These scripts will fetch tickers, download historical price data via `yfinance`, and calculate metrics like momentum and volatility.
+
+From the `backend` directory, activate your virtual environment and run:
+
+**For US Markets (NASDAQ/NYSE):**
+```bash
+python -m scripts.ingest_yfinance_universe
+```
+
+**For UK Markets (London Stock Exchange):**
+```bash
+python -m scripts.ingest_uk_universe
+```
