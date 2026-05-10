@@ -47,3 +47,8 @@ python -m scripts.ingest_yfinance_universe
 ```bash
 python -m scripts.ingest_uk_universe
 ```
+
+**For Indian Markets (National Stock Exchange):**
+```bash
+python scripts/ingest_stocks.py --market NSE
+```
