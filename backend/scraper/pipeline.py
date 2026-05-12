@@ -9,14 +9,21 @@ async def upsert_stocks(stocks: list[dict]) -> dict:
     failures: list[str] = []
     for stock in stocks:
         ticker = stock.get("ticker", "").upper()
+        exchange = stock.get("exchange", "UNKNOWN").upper()
         if not ticker:
             failures.append("missing-ticker")
             continue
         stock["ticker"] = ticker
+        stock["exchange"] = exchange
         stock["last_updated"] = datetime.now(UTC)
         try:
-            await db.stocks.update_one({"ticker": ticker}, {"$set": stock}, upsert=True)
+            # Compound filter: same ticker on different exchanges → separate docs
+            await db.stocks.update_one(
+                {"ticker": ticker, "exchange": exchange},
+                {"$set": stock},
+                upsert=True,
+            )
             success += 1
         except Exception:
-            failures.append(ticker)
+            failures.append(f"{ticker}:{exchange}")
     return {"upserted": success, "failed": failures}

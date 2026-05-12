@@ -128,6 +128,8 @@ def _build_stock_from_history(ticker: str, history) -> dict | None:
     return {
         "ticker": ticker,
         "name": ticker,
+        "exchange": "US",
+        "currency": "USD",
         "sector": None,
         "industry": None,
         "logo_url": PLACEHOLDER_LOGO,

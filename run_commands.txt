@@ -1,0 +1,19 @@
+cd c:\Users\aakan\Documents\Projects\investments_hackthon\apex-swipe\backend
+python -m venv .venv
+.\.venv\Scripts\Activate
+pip install -r requirements.txt
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
+
+backend\.venv\Scripts\python.exe 
+
+python scripts/check_mongo.py
+python scripts/ingest_stocks.py --market NSE --limit 1500
+python scripts/ingest_stocks.py --market NSE
+pip install pymongo 
+
+cd c:\Users\aakan\Documents\Projects\investments_hackthon\apex-swipe\frontend
+npm install
+npm run dev
+
+chnages 
+1. "next": "^14.0.0",

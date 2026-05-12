@@ -1,6 +1,6 @@
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
-from scraper.fetcher import fetch_ticker_universe
+from scraper.fetcher_us import fetch_ticker_universe
 from scraper.pipeline import upsert_stocks
 
 scheduler = AsyncIOScheduler()

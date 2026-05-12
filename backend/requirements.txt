@@ -9,3 +9,5 @@ yfinance
 apscheduler
 numpy
 scikit-learn
+requests
+beautifulsoup4
