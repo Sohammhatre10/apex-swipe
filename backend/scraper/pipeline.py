@@ -8,7 +8,7 @@ async def upsert_stocks(stocks: list[dict]) -> dict:
     success = 0
     failures: list[str] = []
     for stock in stocks:
-        ticker = stock.get("ticker", "").upper()
+        ticker = stock.get("yf_symbol", stock.get("ticker", "")).upper()
         if not ticker:
             failures.append("missing-ticker")
             continue
