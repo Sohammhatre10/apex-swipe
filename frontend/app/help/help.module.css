@@ -1,0 +1,197 @@
+.helpHero {
+  padding: 120px 20px 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.perspectiveGrid {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: 
+    linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.1) 1px, transparent 1px);
+  background-size: 60px 60px;
+  transform: rotateX(60deg) translateY(-100px) translateZ(-200px);
+  animation: gridMove 20s linear infinite;
+  z-index: -2;
+  mask-image: radial-gradient(circle at 50% 50%, black, transparent 70%);
+}
+
+@keyframes gridMove {
+  0% { transform: rotateX(60deg) translateY(0) translateZ(-200px); }
+  100% { transform: rotateX(60deg) translateY(60px) translateZ(-200px); }
+}
+
+.glowOrb {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+  filter: blur(60px);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.orb1 {
+  top: -100px;
+  left: 20%;
+}
+
+.mainTitle {
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 900;
+  margin-bottom: 24px;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.searchContainer {
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+  margin-top: 32px;
+}
+
+.searchInput {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 18px 24px 18px 56px;
+  border-radius: 16px;
+  color: #fff;
+  font-size: 1.1rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.searchIcon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+}
+
+.categoriesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 40px 0;
+}
+
+.categoryCard {
+  padding: 32px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.categoryCard:hover {
+  transform: translateY(-8px);
+  border-color: rgba(139, 92, 246, 0.3);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.categoryIcon {
+  width: 56px;
+  height: 56px;
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--accent-purple);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.categoryTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.categoryDesc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.faqSection {
+  padding: 80px 0;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faqItem {
+  padding: 24px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.faqItem:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.faqQuestion {
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contactSection {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.contactBox {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.contactTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.contactDesc {
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
