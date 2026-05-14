@@ -60,8 +60,14 @@ export default function StockCard({ data, active, onSwipe, zIndex, depth }: Stoc
   useEffect(() => {
     if (exitX !== 0) {
       controls.start({ x: exitX, opacity: 0, transition: { duration: 0.3 } });
+    } else {
+      controls.start({
+        scale,
+        y: yOffset,
+        opacity: active ? 1 : 1 - depth * 0.2,
+      });
     }
-  }, [exitX, controls]);
+  }, [exitX, scale, yOffset, active, depth, controls]);
 
   const isPositive = data.change >= 0;
   const strokeColor = isPositive ? "var(--accent-green)" : "var(--accent-red)";
@@ -76,13 +82,6 @@ export default function StockCard({ data, active, onSwipe, zIndex, depth }: Stoc
       }}
       animate={controls}
       initial={{ scale: 0.8, opacity: 0, y: 50 }}
-      animate={
-        exitX === 0 ? {
-          scale,
-          y: yOffset,
-          opacity: active ? 1 : 1 - depth * 0.2,
-        } : undefined
-      }
       transition={{ type: "spring", stiffness: 300, damping: 25 }}
       drag={active ? "x" : false}
       dragConstraints={{ left: 0, right: 0 }}
