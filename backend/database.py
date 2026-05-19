@@ -5,6 +5,10 @@ from motor.motor_asyncio import AsyncIOMotorClient, AsyncIOMotorDatabase
 
 from config import settings
 
+import dns.resolver
+dns.resolver.default_resolver = dns.resolver.Resolver(configure=False)
+dns.resolver.default_resolver.nameservers = ['8.8.8.8', '8.8.4.4', '1.1.1.1']
+
 
 client: AsyncIOMotorClient | None = None
 db: AsyncIOMotorDatabase | None = None

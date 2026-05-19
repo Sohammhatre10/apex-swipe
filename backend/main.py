@@ -2,7 +2,7 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
+import os
 from auth.router import router as auth_router
 from database import connect_db, get_db
 from recommendations.router import router as recommendations_router
@@ -11,6 +11,7 @@ from stocks.router import router as stocks_router
 from swipes.router import router as swipes_router
 from users.router import router as users_router
 
+BACKEND_URL = os.getenv("FRONTEND_URL")
 
 @asynccontextmanager
 async def lifespan(_: FastAPI):
@@ -31,7 +32,7 @@ app = FastAPI(title="ApexSwipe API", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["http://localhost:3000", FRONTEND_URL],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
