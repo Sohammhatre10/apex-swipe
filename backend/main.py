@@ -11,7 +11,7 @@ from stocks.router import router as stocks_router
 from swipes.router import router as swipes_router
 from users.router import router as users_router
 
-FRONTEND_URL = os.getenv("FRONTEND_URL", "")
+FRONTEND_URL = os.getenv("FRONTEND_URL", "").rstrip("/")
 @asynccontextmanager
 async def lifespan(_: FastAPI):
     await connect_db()
@@ -51,6 +51,10 @@ async def search(q: str) -> list[dict]:
     docs = await db.stocks.find({"$or": [{"ticker": regex}, {"name": regex}]}).limit(6).to_list(length=6)
     return [{"ticker": item["ticker"], "name": item.get("name", ""), "logo_url": item.get("logo_url")} for item in docs]
 
+
+@app.api_route("/", methods=["GET", "HEAD"])
+async def root() -> dict:
+    return {"message": "ApexSwipe API is running"}
 
 @app.get("/health")
 async def health() -> dict:
